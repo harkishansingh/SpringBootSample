@@ -1,0 +1,19 @@
+# Map the error path to error template (for Thymeleaf)
+error:
+  path: /error
+
+# HTTP Server
+server:
+  port: 1111   # HTTP (Tomcat) port
+  tomcat:
+    accesslog:
+      enabled: true
+      pattern: "%{RemoteIp}o %{X-Real-IP}i %{User}o %t \"%r\" %s"
+      prefix: "sample"  
+      suffix: ".log"
+      rename-on-rotate: true   
+    basedir: "access_logs"
+ 
+logging:
+  level:
+    org.springframework.cloud.consul: DEBUG
